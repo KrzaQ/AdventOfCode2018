@@ -4,18 +4,12 @@ require 'set'
 
 DATA = File.read('data.txt').split.map(&:to_i)
 
-p DATA.sum
+PART1 = DATA.sum
+PART2 = DATA
+    .cycle
+    .each_with_object([Set.new, 0])
+    .take_while{ |e, o| o[-1] += e; o.first.add? o.last }
+    .last.last.last
 
-def get_repeated
-    i = 0
-    s = 0
-    f = Set.new
-    loop do
-        s += DATA[i % DATA.size]
-        return s if f.include? s
-        f.add s
-        i += 1
-    end
-end
-p get_repeated
-
+puts 'Part 1: %s' % PART1
+puts 'Part 2: %s' % PART2
