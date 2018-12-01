@@ -3,7 +3,7 @@
 
 I'm using various languages to provide solutions.
 
-| Day | Name | <%= DATA[:ordering].join('|') %> |
+| Day | Name | <%= DATA[:ordering].join(' | ') %> |
 |:---:|:---|<%= ([':---:'] * DATA[:ordering].count).join('|') %>|
 % (1..25).select{ |d| DATA.has_key? ('day%02d' % d).to_sym }.each do |n|
 %   d = 'day%02d' % n

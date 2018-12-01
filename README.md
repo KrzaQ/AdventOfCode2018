@@ -3,12 +3,12 @@
 
 I'm using various languages to provide solutions.
 
-| Day | Name | Ruby |
-|:---:|:---|:---:|
-| 01 | [Chronal Calibration][day01] | [:heavy_check_mark:](solutions/day01/main.rb) |
+| Day | Name | Ruby | D |
+|:---:|:---|:---:|:---:|
+| 01 | [Chronal Calibration][day01] | [:heavy_check_mark:](solutions/day01/main.rb) | [:heavy_check_mark:](solutions/day01/main.d) |
 
 [day01]: https://adventofcode.com/2018/day/1
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2018-12-01 12:45:09 +0100
+Readme generated on 2018-12-01 14:45:28 +0100
