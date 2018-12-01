@@ -1,0 +1,28 @@
+[Advent of Code 2018](https://adventofcode.com) solutions by [KrzaQ][kq]
+========================
+
+I'm using various languages to provide solutions.
+
+| Day | Name | <%= DATA[:ordering].join('|') %> |
+|:---:|:---|<%= ([':---:'] * DATA[:ordering].count).join('|') %>|
+% (1..25).select{ |d| DATA.has_key? ('day%02d' % d).to_sym }.each do |n|
+%   d = 'day%02d' % n
+%   day = DATA[d.to_sym]
+%   solutions = day[:solutions].map{ |el| [el[:language], el[:path]] }.to_h
+%   solutions = DATA[:ordering].map do |l|
+%       if solutions.has_key? l
+%           '[:heavy_check_mark:](%s/%s)' % [day[:path], solutions[l]]
+%       else
+%           ''
+%       end
+%   end.join(' | ')
+| <%= '%02d' % n %> | [<%= day[:desc] %>][<%= d %>] | <%= solutions %> |
+% end
+
+% (1..25).select{ |d| DATA.has_key? ('day%02d' % d).to_sym }.each do |n|
+[day<%= '%02d' % n %>]: https://adventofcode.com/2018/day/<%= n %>
+% end
+
+[kq]: https://dev.krzaq.cc
+
+Readme generated on <%= Time.now.strftime('%Y-%m-%d %H:%M:%S %z') %>
