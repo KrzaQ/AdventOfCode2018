@@ -17,6 +17,17 @@
             }
         ]
     },
+    "day02": {
+        "desc": "Inventory Management System",
+        "path": "solutions/day02",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+
+    },
     "ordering": [
         "Ruby",
         "Rust",
