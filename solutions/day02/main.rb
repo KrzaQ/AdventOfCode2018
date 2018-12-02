@@ -1,7 +1,5 @@
 #!/usr/bin/ruby
 
-require 'levenshtein'
-
 DATA = File.read('data.txt').split
 
 P1 = DATA.map do |s|
@@ -13,22 +11,27 @@ end
 
 PART1 = P1.count{ |v| v.include? 2 } * P1.count{ |v| v.include? 3 }
 
-P2 = DATA
-    .map{ |v| DATA.reject{ |x| x == v }.zip([v] * (DATA.size-1)) }
-    .flatten(1)
-    .sort_by{ |k,v| Levenshtein.normalized_distance k, v }
-
-PART2 = P2.first
-    .yield_self do |o|
-        a,b = o.map(&:each_codepoint)
-
-        a
-            .zip(b)
-            .reject{ |k, v| k != v}
-            .map(&:first)
-            .map(&:chr)
-            .join
+def each_pair
+    Enumerator.new(DATA.size * (DATA.size-1)) do |out|
+        DATA.each do |l|
+            DATA.each do |r|
+                next if l == r
+                out << [l, r]
+            end
+        end
     end
+end
+
+def count_dist l, r
+    out = l.each_codepoint.zip(r.each_codepoint).select{ |l, r| l == r }
+    out.size == l.size - 1 ? out.map(&:first).map(&:chr).join : nil
+end
+
+PART2 = each_pair
+    .lazy
+    .map{ |l, r| count_dist l, r }
+    .select{ |v| v }
+    .first
 
 puts 'Part 1: %s' % PART1
 puts 'Part 2: %s' % PART2
