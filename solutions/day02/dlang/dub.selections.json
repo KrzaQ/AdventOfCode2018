@@ -1,0 +1,8 @@
+{
+	"fileVersion": 1,
+	"versions": {
+		"itertools": "1.1.0",
+		"mir-algorithm": "3.1.19",
+		"mir-core": "0.0.12"
+	}
+}

@@ -24,6 +24,10 @@
             {
                 "language": "Ruby",
                 "path": "main.rb"
+            },
+            {
+                "language": "D",
+                "path": "dlang/source/main.d"
             }
         ]
 

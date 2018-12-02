@@ -1,0 +1,12 @@
+{
+	"description": "Day 02",
+	"dependencies": {
+		"mir-algorithm": "~>3.1.19"
+	},
+	"authors": [
+		"krzaq"
+	],
+	"copyright": "Copyright © 2018, krzaq",
+	"license": "MIT",
+	"name": "day02"
+}
