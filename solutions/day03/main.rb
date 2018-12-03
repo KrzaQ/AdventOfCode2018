@@ -18,12 +18,12 @@ DATA = File.read('data.txt')
         if not $overlaps.include? e[0]
             $overlaps[e[0]] = false
         end
-    t.merge(arr_to_claim e) do |k, o, n|
-        r = [o.first + n.first, o.last + n.last]
-        r.last.each{ |x| $overlaps[x] = r.last.size > 1 }
-        r
+        t.merge(arr_to_claim e) do |k, o, n|
+            r = [o.first + n.first, o.last + n.last]
+            r.last.each{ |x| $overlaps[x] = r.last.size > 1 }
+            r
+        end
     end
-end
 
 PART1 = DATA.select{|k, v| v.first > 1 }.count
 PART2 = $overlaps.select{|k, v| v == false }.map{ |k, v| k }.join(", ")
