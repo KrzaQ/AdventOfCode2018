@@ -43,6 +43,10 @@
             {
                 "language": "Ruby",
                 "path": "main.rb"
+            },
+            {
+                "language": "Rust",
+                "path": "rust/src/main.rs"
             }
         ]
     },
