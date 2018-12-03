@@ -28,6 +28,10 @@
             {
                 "language": "D",
                 "path": "dlang/source/main.d"
+            },
+            {
+                "language": "Rust",
+                "path": "rust/src/main.rs"
             }
         ]
 
