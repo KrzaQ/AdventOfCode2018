@@ -60,6 +60,16 @@
             }
         ]
     },
+    "day05": {
+        "desc": "Alchemical Reduction",
+        "path": "solutions/day05",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+    },
     "ordering": [
         "Ruby",
         "Rust",
