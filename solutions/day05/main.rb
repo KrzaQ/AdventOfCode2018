@@ -5,7 +5,6 @@ DATA = File.read('data.txt').strip
 copy = [DATA.clone, true]
 
 def make_pass input, hint
-    input += "?"
     hint = [hint-1, 0].max
     n = hint
     found = input.size
@@ -21,7 +20,7 @@ def make_pass input, hint
         n += 1
     end
 
-    orig_size = input.size - 1
+    orig_size = input.size
     input.gsub!('?','')
     [input, input.size != orig_size, found]
 end
