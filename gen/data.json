@@ -70,6 +70,16 @@
             }
         ]
     },
+    "day06": {
+        "desc": "Chronal Coordinates",
+        "path": "solutions/day06",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+    },
     "ordering": [
         "Ruby",
         "Rust",
