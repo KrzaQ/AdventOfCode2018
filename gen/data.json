@@ -83,7 +83,12 @@
     "day07": {
         "desc": "The Sum of Its Parts",
         "path": "solutions/day07",
-        "solutions": []
+        "solutions": [
+            {
+                "language": "D",
+                "path": "main.d"
+            }
+        ]
     },
     "day08": {
         "desc": "Memory Maneuver",
