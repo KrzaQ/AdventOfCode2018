@@ -11,6 +11,8 @@ I'm using various languages to provide solutions.
 | 04 | [Repose Record][day04] | [:heavy_check_mark:](solutions/day04/main.rb) |  |  |
 | 05 | [Alchemical Reduction][day05] | [:heavy_check_mark:](solutions/day05/main.rb) |  |  |
 | 06 | [Chronal Coordinates][day06] | [:heavy_check_mark:](solutions/day06/main.rb) |  |  |
+| 07 | [The Sum of Its Parts][day07] |  |  |  |
+| 08 | [Memory Maneuver][day08] | [:heavy_check_mark:](solutions/day08/main.rb) |  |  |
 
 [day01]: https://adventofcode.com/2018/day/1
 [day02]: https://adventofcode.com/2018/day/2
@@ -18,7 +20,9 @@ I'm using various languages to provide solutions.
 [day04]: https://adventofcode.com/2018/day/4
 [day05]: https://adventofcode.com/2018/day/5
 [day06]: https://adventofcode.com/2018/day/6
+[day07]: https://adventofcode.com/2018/day/7
+[day08]: https://adventofcode.com/2018/day/8
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2018-12-06 06:37:02 +0100
+Readme generated on 2018-12-08 06:40:06 +0100

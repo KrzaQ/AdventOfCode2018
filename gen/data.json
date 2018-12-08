@@ -80,6 +80,21 @@
             }
         ]
     },
+    "day07": {
+        "desc": "The Sum of Its Parts",
+        "path": "solutions/day07",
+        "solutions": []
+    },
+    "day08": {
+        "desc": "Memory Maneuver",
+        "path": "solutions/day08",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+    },
     "ordering": [
         "Ruby",
         "Rust",
