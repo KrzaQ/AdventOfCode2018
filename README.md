@@ -9,7 +9,7 @@ I'm using various languages to provide solutions.
 | 02 | [Inventory Management System][day02] | [:heavy_check_mark:](solutions/day02/main.rb) | [:heavy_check_mark:](solutions/day02/rust/src/main.rs) | [:heavy_check_mark:](solutions/day02/dlang/source/main.d) |  |
 | 03 | [No Matter How You Slice It][day03] | [:heavy_check_mark:](solutions/day03/main.rb) | [:heavy_check_mark:](solutions/day03/rust/src/main.rs) |  |  |
 | 04 | [Repose Record][day04] | [:heavy_check_mark:](solutions/day04/main.rb) |  |  |  |
-| 05 | [Alchemical Reduction][day05] | [:heavy_check_mark:](solutions/day05/main.rb) |  |  |  |
+| 05 | [Alchemical Reduction][day05] | [:heavy_check_mark:](solutions/day05/main.rb) | [:heavy_check_mark:](solutions/day05/rust/src/main.rs) |  |  |
 | 06 | [Chronal Coordinates][day06] | [:heavy_check_mark:](solutions/day06/main.rb) |  |  |  |
 | 07 | [The Sum of Its Parts][day07] |  |  | [:heavy_check_mark:](solutions/day07/main.d) |  |
 | 08 | [Memory Maneuver][day08] | [:heavy_check_mark:](solutions/day08/main.rb) |  |  |  |
@@ -27,4 +27,4 @@ I'm using various languages to provide solutions.
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2018-12-09 07:09:09 +0100
+Readme generated on 2018-12-09 21:57:44 +0100
