@@ -13,7 +13,7 @@ I'm using various languages to provide solutions.
 | 06 | [Chronal Coordinates][day06] | [:heavy_check_mark:](solutions/day06/main.rb) |  |  |  |
 | 07 | [The Sum of Its Parts][day07] |  |  | [:heavy_check_mark:](solutions/day07/main.d) |  |
 | 08 | [Memory Maneuver][day08] | [:heavy_check_mark:](solutions/day08/main.rb) |  |  |  |
-| 09 | [Marble Mania][day09] | [:heavy_check_mark:](solutions/day09/main.rb) | [:heavy_check_mark:](solutions/day09/rust/src/main.rs) |  | [:heavy_check_mark:](solutions/day09/main.cpp) |
+| 09 | [Marble Mania][day09] | [:heavy_check_mark:](solutions/day09/main.rb) | [:heavy_check_mark:](solutions/day09/rust/src/main.rs) | [:heavy_check_mark:](solutions/day09/main.d) | [:heavy_check_mark:](solutions/day09/main.cpp) |
 
 [day01]: https://adventofcode.com/2018/day/1
 [day02]: https://adventofcode.com/2018/day/2
@@ -27,4 +27,4 @@ I'm using various languages to provide solutions.
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2018-12-09 22:25:17 +0100
+Readme generated on 2018-12-09 23:01:07 +0100

@@ -119,6 +119,10 @@
             {
                 "language": "Rust",
                 "path": "rust/src/main.rs"
+            },
+            {
+                "language": "D",
+                "path": "main.d"
             }
         ]
     },
