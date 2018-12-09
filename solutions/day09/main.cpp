@@ -22,27 +22,33 @@ result_t solve(int players, int last)
 
     vector<result_t> scores(players, 0);
 
+    auto cycle_next = [&](auto& it, int n){
+        for(int i = 0; i < n; i++) {
+            if(it == arr.end())
+                it = arr.begin();
+            advance(it, 1);
+        }
+    };
+
+    auto cycle_prev = [&](auto& it, int n){
+        for(int i = 0; i < n; i++) {
+            if(it == arr.begin())
+                it = arr.end();
+            advance(it, -1);
+        }
+    };
+
     for(int i = 1; i <= last; i++) {
         if(i % 23) {
-            if(cur_it == arr.end())
-                cur_it = arr.begin();
-            advance(cur_it, 1);
+            cycle_next(cur_it, 1);
             cur_it = arr.insert(cur_it, i);
-            if(cur_it == arr.end())
-                cur_it = arr.begin();
-            advance(cur_it, 1);
+            cycle_next(cur_it, 1);
         } else {
             scores[i % players] += i;
-            for(int dec = 8; dec > 0; dec--) {
-                if(cur_it == arr.begin())
-                    cur_it = arr.end();
-                advance(cur_it, -1);
-            }
+            cycle_prev(cur_it, 8);
             scores[i % players] += *cur_it;
             cur_it = arr.erase(cur_it);
-            if(cur_it == arr.end())
-                cur_it = arr.begin();
-            advance(cur_it, 1);
+            cycle_next(cur_it, 1);
         }
     }
     return *std::max_element(scores.begin(), scores.end());
