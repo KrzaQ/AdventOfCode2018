@@ -100,9 +100,24 @@
             }
         ]
     },
+    "day09": {
+        "desc": "Marble Mania",
+        "path": "solutions/day09",
+        "solutions": [
+            {
+                "language": "C++",
+                "path": "main.cpp"
+            },
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+    },
     "ordering": [
         "Ruby",
         "Rust",
-        "D"
+        "D",
+        "C++"
     ]
 }
