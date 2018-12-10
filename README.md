@@ -14,6 +14,7 @@ I'm using various languages to provide solutions.
 | 07 | [The Sum of Its Parts][day07] |  |  | [:heavy_check_mark:](solutions/day07/main.d) |  |
 | 08 | [Memory Maneuver][day08] | [:heavy_check_mark:](solutions/day08/main.rb) |  |  |  |
 | 09 | [Marble Mania][day09] | [:heavy_check_mark:](solutions/day09/main.rb) | [:heavy_check_mark:](solutions/day09/rust/src/main.rs) | [:heavy_check_mark:](solutions/day09/main.d) | [:heavy_check_mark:](solutions/day09/main.cpp) |
+| 10 | [The Stars Align][day10] | [:heavy_check_mark:](solutions/day10/main.rb) |  |  |  |
 
 [day01]: https://adventofcode.com/2018/day/1
 [day02]: https://adventofcode.com/2018/day/2
@@ -24,7 +25,8 @@ I'm using various languages to provide solutions.
 [day07]: https://adventofcode.com/2018/day/7
 [day08]: https://adventofcode.com/2018/day/8
 [day09]: https://adventofcode.com/2018/day/9
+[day10]: https://adventofcode.com/2018/day/10
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2018-12-09 23:01:07 +0100
+Readme generated on 2018-12-10 06:35:10 +0100
