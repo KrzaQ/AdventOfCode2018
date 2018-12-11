@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-DATA = File
+SERIAL = File
     .read('data.txt')
     .to_i
 
@@ -13,10 +13,15 @@ def calc_cell x, y, serial
     power_lvl - 5
 end
 
-def calc_grid_p1 x, y, serial
+GRID = (0..300).map do |y|
+        (0..300).map{ |x| calc_cell x, y, SERIAL }
+    end
+
+
+def calc_grid_p1 x, y
     (0...3).to_a
         .product((0...3).to_a)
-        .map{ |ox, oy| calc_cell(x+ox, y+oy, serial) }
+        .map{ |ox, oy| calc_cell(x+ox, y+oy, SERIAL) }
         .sum
         .yield_self do |s|
             {
@@ -27,16 +32,16 @@ def calc_grid_p1 x, y, serial
         end
 end
 
-def calc_grid_p2 x, y, serial
+def calc_grid_p2 x, y
     max_size = 300-[x,y].max
     prev = 0
     r = (1..max_size).map do |max|
 
         added = (0...max).map do |oz|
-            calc_cell(x+oz, y+max-1, serial) +
-            calc_cell(x+max-1, y+oz, serial)
+            GRID[y+max-1][x+oz] +
+            GRID[y+oz][x+max-1]
         end.sum
-        added -= calc_cell(x+max-1, y+max-1, serial)
+        added -= GRID[y+max-1][x+max-1]
 
         prev += added
 
@@ -49,12 +54,12 @@ def calc_grid_p2 x, y, serial
 end
 
 PART1 = (1..300).to_a.product((1..300).to_a)
-    .map{ |x, y| calc_grid_p1 x, y, DATA }
+    .map{ |x, y| calc_grid_p1 x, y }
     .sort_by{ |r| r[:sum] }
     .last
 
 PART2 = (1...300).to_a.product((1...300).to_a)
-    .map{ |x, y| calc_grid_p2 x, y, DATA }
+    .map{ |x, y| calc_grid_p2 x, y }
     .sort_by{ |r| r[:sum] }
     .last
 
