@@ -16,6 +16,7 @@ I'm using various languages to provide solutions.
 | 09 | [Marble Mania][day09] | [:heavy_check_mark:](solutions/day09/main.rb) | [:heavy_check_mark:](solutions/day09/rust/src/main.rs) | [:heavy_check_mark:](solutions/day09/main.d) | [:heavy_check_mark:](solutions/day09/main.cpp) |
 | 10 | [The Stars Align][day10] | [:heavy_check_mark:](solutions/day10/main.rb) |  |  |  |
 | 11 | [Chronal Charge][day11] | [:heavy_check_mark:](solutions/day11/main.rb) |  |  |  |
+| 12 | [Subterranean Sustainability][day12] | [:heavy_check_mark:](solutions/day12/main.rb) |  |  |  |
 
 [day01]: https://adventofcode.com/2018/day/1
 [day02]: https://adventofcode.com/2018/day/2
@@ -28,7 +29,8 @@ I'm using various languages to provide solutions.
 [day09]: https://adventofcode.com/2018/day/9
 [day10]: https://adventofcode.com/2018/day/10
 [day11]: https://adventofcode.com/2018/day/11
+[day12]: https://adventofcode.com/2018/day/12
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2018-12-11 07:04:49 +0100
+Readme generated on 2018-12-12 06:51:24 +0100
