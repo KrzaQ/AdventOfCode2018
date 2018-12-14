@@ -18,6 +18,7 @@ I'm using various languages to provide solutions.
 | 11 | [Chronal Charge][day11] | [:heavy_check_mark:](solutions/day11/main.rb) |  |  |  |
 | 12 | [Subterranean Sustainability][day12] | [:heavy_check_mark:](solutions/day12/main.rb) |  |  |  |
 | 13 | [Mine Cart Madness][day13] | [:heavy_check_mark:](solutions/day13/main.rb) |  |  |  |
+| 14 | [Chocolate Charts][day14] |  |  |  | [:heavy_check_mark:](solutions/day14/main.cpp) |
 
 [day01]: https://adventofcode.com/2018/day/1
 [day02]: https://adventofcode.com/2018/day/2
@@ -32,7 +33,8 @@ I'm using various languages to provide solutions.
 [day11]: https://adventofcode.com/2018/day/11
 [day12]: https://adventofcode.com/2018/day/12
 [day13]: https://adventofcode.com/2018/day/13
+[day14]: https://adventofcode.com/2018/day/14
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2018-12-13 07:25:36 +0100
+Readme generated on 2018-12-14 07:50:03 +0100

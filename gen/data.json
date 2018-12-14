@@ -166,6 +166,16 @@
             }
         ]
     },
+    "day14": {
+        "desc": "Chocolate Charts",
+        "path": "solutions/day14",
+        "solutions": [
+            {
+                "language": "C++",
+                "path": "main.cpp"
+            }
+        ]
+    },
     "ordering": [
         "Ruby",
         "Rust",
