@@ -57,9 +57,8 @@ void do_step(ref Board b)
     ubyte new_val = b.elves[].map!(e => b.buf[e]).sum.to!ubyte;
 
     if(new_val > 9)
-        b.buf ~= [ new_val / 10, new_val % 10 ];
-    else
-        b.buf ~= [ new_val ];
+        b.buf ~= new_val / 10;
+    b.buf ~= new_val % 10;
 
     foreach(ref e; b.elves) {
         e = b.buf[e] + 1 + e;
