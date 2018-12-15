@@ -13,9 +13,6 @@ void main()
 
     "Part 1: %s".writefln(input.part1(b));
     "Part 2: %s".writefln(input.to!string.part2(b));
-
-    //"Part 1: %s".writefln(solve(403, 71920));
-    //"Part 2: %s".writefln(solve(403, 71920*100));
 }
 
 struct Board
@@ -57,9 +54,12 @@ size_t part2(string sought_str, Board b)
 void do_step(ref Board b)
 {
     import std.algorithm, std.conv, std.array;
-    auto new_val = b.elves[].map!(e => b.buf[e]).sum;
+    ubyte new_val = b.elves[].map!(e => b.buf[e]).sum.to!ubyte;
 
-    b.buf ~= new_val.to!string.map!(c => (c - '0').to!ubyte).array;
+    if(new_val > 9)
+        b.buf ~= [ new_val / 10, new_val % 10 ];
+    else
+        b.buf ~= [ new_val ];
 
     foreach(ref e; b.elves) {
         e = b.buf[e] + 1 + e;
