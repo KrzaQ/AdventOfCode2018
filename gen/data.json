@@ -180,6 +180,16 @@
             }
         ]
     },
+    "day15": {
+        "desc": "Beverage Bandits",
+        "path": "solutions/day15",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+    },
     "ordering": [
         "Ruby",
         "Rust",
