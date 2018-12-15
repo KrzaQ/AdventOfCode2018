@@ -173,6 +173,10 @@
             {
                 "language": "C++",
                 "path": "main.cpp"
+            },
+            {
+                "language": "D",
+                "path": "main.d"
             }
         ]
     },
