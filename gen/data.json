@@ -194,6 +194,16 @@
             }
         ]
     },
+    "day16": {
+        "desc": "Chronal Classification",
+        "path": "solutions/day16",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+    },
     "ordering": [
         "Ruby",
         "Rust",
