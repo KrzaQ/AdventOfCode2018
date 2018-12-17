@@ -21,6 +21,7 @@ I'm using various languages to provide solutions.
 | 14 | [Chocolate Charts][day14] |  | [:heavy_check_mark:](solutions/day14/rust/src/main.rs) | [:heavy_check_mark:](solutions/day14/main.d) | [:heavy_check_mark:](solutions/day14/main.cpp) |
 | 15 | [Beverage Bandits][day15] | [:heavy_check_mark:](solutions/day15/main.rb) |  |  |  |
 | 16 | [Chronal Classification][day16] | [:heavy_check_mark:](solutions/day16/main.rb) |  |  |  |
+| 17 | [Reservoir Research][day17] | [:heavy_check_mark:](solutions/day17/main.rb) |  |  |  |
 
 [day01]: https://adventofcode.com/2018/day/1
 [day02]: https://adventofcode.com/2018/day/2
@@ -38,7 +39,8 @@ I'm using various languages to provide solutions.
 [day14]: https://adventofcode.com/2018/day/14
 [day15]: https://adventofcode.com/2018/day/15
 [day16]: https://adventofcode.com/2018/day/16
+[day17]: https://adventofcode.com/2018/day/17
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2018-12-16 06:56:46 +0100
+Readme generated on 2018-12-17 08:11:17 +0100
