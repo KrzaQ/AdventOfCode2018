@@ -8,15 +8,21 @@ PROG = File.read('prog.txt')
     .each_line
     .map{ |l| l.scan(/\d+/).map(&:to_i) }
 
-FUNCTIONS = [
-    :addr, :addi,
-    :mulr, :muli,
-    :banr, :bali,
-    :borr, :bori,
-    :setr, :seti,
-    :gtir, :gtri, :gtrr,
-    :eqir, :eqri, :eqrr,
-]
+FUNCTIONS = {
+    addr: [:rr, :+], addi: [:ri, :+],
+    mulr: [:rr, :*], muli: [:ri, :*],
+    banr: [:rr, :&], bani: [:ri, :&],
+    borr: [:rr, :|], bori: [:ri, :|],
+    setr: [:rr, :return_self], seti: [:ii, :return_self],
+    gtir: [:ir, :>], gtri: [:ri, :>], gtrr: [:rr, :>],
+    eqir: [:ir, :==], eqri: [:ri, :==], eqrr: [:rr, :==],
+}
+
+class Integer
+    def return_self param
+        self
+    end
+end
 
 def parse_function lines
     lines = lines.each_line.to_a
@@ -43,68 +49,14 @@ class Machine
         self.registers = regs
     end
 
-    def addr a, b, c
-        registers[c] = registers[a] + registers[b]
-    end
-
-    def addi a, b, c
-        registers[c] = registers[a] + b
-    end
-
-    def mulr a, b, c
-        registers[c] = registers[a] * registers[b]
-    end
-
-    def muli a, b, c
-        registers[c] = registers[a] * b
-    end
-
-    def banr a, b, c
-        registers[c] = registers[a] & registers[b]
-    end
-
-    def bali a, b, c
-        registers[c] = registers[a] & b
-    end
-
-    def borr a, b, c
-        registers[c] = registers[a] | registers[b]
-    end
-
-    def bori a, b, c
-        registers[c] = registers[a] | b
-    end
-
-    def setr a, b, c
-        registers[c] = registers[a]
-    end
-
-    def seti a, b, c
-        registers[c] = a
-    end
-
-    def gtir a, b, c
-        registers[c] = a > registers[b] ? 1 : 0
-    end
-
-    def gtri a, b, c
-        registers[c] = registers[a] > b ? 1 : 0
-    end
-
-    def gtrr a, b, c
-        registers[c] = registers[a] > registers[b] ? 1 : 0
-    end
-
-    def eqir a, b, c
-        registers[c] = a == registers[b] ? 1 : 0
-    end
-
-    def eqri a, b, c
-        registers[c] = registers[a] == b ? 1 : 0
-    end
-
-    def eqrr a, b, c
-        registers[c] = registers[a] == registers[b] ? 1 : 0
+    FUNCTIONS.each do |k, v|
+        define_method k do |a, b, c|
+            a = v.first[0] == 'i' ? a : registers[a]
+            b = v.first[1] == 'i' ? b : registers[b]
+            r = a.send(v.last, b)
+            idx = [false, true].index r
+            registers[c] = idx ? idx : r
+        end
     end
 end
 
@@ -116,12 +68,13 @@ end
 
 def count_possible_functions h
     FUNCTIONS
+        .keys
         .select{ |f| test_opcode f, h }
         .count
 end
 
 def narrow_ops arr
-    possible = FUNCTIONS.clone
+    possible = FUNCTIONS.keys.clone
     for h in arr
         possible = possible.select{ |f| test_opcode f, h }
         break if possible.size == 1
@@ -149,7 +102,7 @@ def simulate ops, prog
         .map{ |k, v| [narrow_ops(v), v] }
         .yield_self{ |a| map_narrowed_ops a }
 
-    m = Machine.new [0,0,0,0]
+    m = Machine.new [0, 0, 0, 0]
 
     prog.each do |arr|
         m.send ops[arr.first], *arr[1..-1]
