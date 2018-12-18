@@ -214,6 +214,16 @@
             }
         ]
     },
+    "day18": {
+        "desc": "Settlers of The North Pole",
+        "path": "solutions/day18",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+    },
     "ordering": [
         "Ruby",
         "Rust",
