@@ -1,0 +1,48 @@
+addi 4 16 4   # GOTO INIT
+BEGIN1
+seti 1 2 3    # R3 = 1
+BEGIN2
+seti 1 6 1    # R1 = 1
+BEGIN3
+mulr 3 1 2    # R2 = R3 * R1
+eqrr 2 5 2    # IF R2 != R5
+addr 2 4 4    #
+addi 4 1 4    #   GOTO HERE
+              # ENDIF
+###
+### Add R3 to R0 when R1 * R3 == R2. Thus, add prime factors of R5 to R0
+###
+
+addr 3 0 0    # R0 += R3
+addi 1 1 1    # R1 += 1
+gtrr 1 5 2    # R2 = R1 > R5
+addr 4 2 4    # JUMP LABEL1
+HERE:
+seti 2 8 4    # GOTO BEGIN3
+addi 3 1 3    # R3 += 1
+gtrr 3 5 2    # IF R3 > R5 GOTO LABEL2
+addr 2 4 4    # 
+LABEL1:
+seti 1 4 4    # GOTO BEGIN2
+LABEL2:
+mulr 4 4 4    # R4 = R4 * R4 ## END?
+INIT:
+addi 5 2 5    # R5 += 2
+mulr 5 5 5    # R5 *= R5
+mulr 4 5 5    # R5 *= R4 # R4 = 19
+muli 5 11 5   # R5 *= 11
+addi 2 5 2    # R2 += 5
+mulr 2 4 2    # R2 *= R4 # R4 = 22
+addi 2 18 2   # R2 += 18
+addr 5 2 5    # R5 += R2
+addr 4 0 4    # IF R0 == 0
+seti 0 6 4    #     R4 = 0
+setr 4 8 2    # R2 = R4
+mulr 2 4 2    # R2 *= R4
+addr 4 2 2    # R2 += R2
+mulr 4 2 2    # R2 *= R4
+muli 2 14 2   # R2 *= 14
+mulr 2 4 2    # R2 *= R4
+addr 5 2 5    # R5 += R2
+seti 0 1 0    # R0 = 0
+seti 0 5 4    # GOTO BEGIN1
