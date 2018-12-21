@@ -24,6 +24,7 @@ I'm using various languages to provide solutions.
 | 17 | [Reservoir Research][day17] | [:heavy_check_mark:](solutions/day17/main.rb) |  |  |  |
 | 18 | [Settlers of The North Pole][day18] | [:heavy_check_mark:](solutions/day18/main.rb) |  |  |  |
 | 19 | [Go With The Flow][day19] | [:heavy_check_mark:](solutions/day19/main.rb) |  |  |  |
+| 21 | [Chronal Conversion][day21] | [:heavy_check_mark:](solutions/day21/main.rb) |  |  | [:heavy_check_mark:](solutions/day21/machine.cpp) |
 
 [day01]: https://adventofcode.com/2018/day/1
 [day02]: https://adventofcode.com/2018/day/2
@@ -44,7 +45,8 @@ I'm using various languages to provide solutions.
 [day17]: https://adventofcode.com/2018/day/17
 [day18]: https://adventofcode.com/2018/day/18
 [day19]: https://adventofcode.com/2018/day/19
+[day21]: https://adventofcode.com/2018/day/21
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2018-12-19 07:18:31 +0100
+Readme generated on 2018-12-21 07:28:18 +0100

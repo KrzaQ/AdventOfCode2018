@@ -234,6 +234,20 @@
             }
         ]
     },
+    "day21": {
+        "desc": "Chronal Conversion",
+        "path": "solutions/day21",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            },
+            {
+                "language": "C++",
+                "path": "machine.cpp"
+            }
+        ]
+    },
     "ordering": [
         "Ruby",
         "Rust",

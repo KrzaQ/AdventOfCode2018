@@ -1,0 +1,115 @@
+// Code generated in Ruby. You've been warned.
+
+#include <array>
+#include <iostream>
+#include <functional>
+#include <vector>
+#include <type_traits>
+#include <unordered_set>
+
+template<int IP>
+struct machine
+{
+    std::array<int, 6> registers;
+    int instruction;
+
+    machine(int first_value):
+        registers{{first_value}}
+    {}
+
+    int& ip() { return registers[IP]; }
+
+    template<int A, int B, int C>
+    void addr() { registers[C] = registers[A] + registers[B]; }
+
+    template<int A, int B, int C>
+    void addi() { registers[C] = registers[A] + B; }
+    
+    template<int A, int B, int C>
+    void mulr() { registers[C] = registers[A] * registers[B]; }
+
+    template<int A, int B, int C>
+    void muli() { registers[C] = registers[A] * B; }
+    
+    template<int A, int B, int C>
+    void banr() { registers[C] = registers[A] & registers[B]; }
+
+    template<int A, int B, int C>
+    void bani() { registers[C] = registers[A] & B; }
+    
+    template<int A, int B, int C>
+    void borr() { registers[C] = registers[A] | registers[B]; }
+
+    template<int A, int B, int C>
+    void bori() { registers[C] = registers[A] | B; }
+    
+    template<int A, int, int C>
+    void setr() { registers[C] = registers[A]; }
+
+    template<int A, int, int C>
+    void seti() { registers[C] = A; }
+    
+    template<int A, int B, int C>
+    void gtir() { registers[C] = A > registers[B]; }
+    
+    template<int A, int B, int C>
+    void gtri() { registers[C] = registers[A] > B; }
+    
+    template<int A, int B, int C>
+    void gtrr() { registers[C] = registers[A] > registers[B]; }
+    
+    template<int A, int B, int C>
+    void eqir() { registers[C] = A == registers[B]; }
+    
+    template<int A, int B, int C>
+    void eqri() { registers[C] = registers[A] == B; }
+    
+    template<int A, int B, int C>
+    void eqrr() { registers[C] = registers[A] == registers[B]; }
+};
+
+int main(int argc, char** argv)
+{
+    using m = <%= 'machine<%s>' % IP_REGISTER %>;
+
+    std::unordered_set<int> found;
+    int last_inserted;
+%   def make_op a, idx
+%       out = []
+%       out << 'LABEL_%d:' % idx
+%       out << 'sym.%s<%s,%s,%s>();' % a
+%       out << 'sym.ip()++;'
+%       if idx == 28 # yes, binding to my data
+%           out << 'if(found.size() == 0) {'
+%           out << '    std::cout << "Part 1: " << sym.registers[2] << "\n";'
+%           out << '}'
+%           out << 'if(found.insert(sym.registers[2]).second) {'
+%           out << '    last_inserted = sym.registers[2];'
+%           out << '} else {'
+%           out << '    std::cout << "Part 2: " << last_inserted << "\n";'
+%           out << '    return 0;'
+%           out << '}'
+%           
+%       end
+%       is_jump = [:addi, :addr, :seti, :setr].include? a.first
+%       if is_jump and a.last == IP_REGISTER
+%           out << 'switch(sym.registers[%s]) {' % IP_REGISTER
+%           INSTRUCTIONS.size.times do |n|
+%               str = '    case %s: goto LABEL_%s;' % [ n, n ]
+%               out << str
+%           end
+%           out << '    default: goto LABEL_%s;' % INSTRUCTIONS.size
+%           out << '}'
+%       end
+%       out.map{ |s| '%s%s' % [ ' ' * 4, s ] }.join("\n")
+%   end
+
+    m sym{0};
+
+<%= INSTRUCTIONS.each_with_index.map{ |a, i| make_op a, i }.join("\n") %>
+
+    LABEL_<%= INSTRUCTIONS.size %>:
+
+    std::cout << sym.registers[0] << '\n';
+}
+
