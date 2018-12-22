@@ -248,6 +248,16 @@
             }
         ]
     },
+    "day22": {
+        "desc": "Mode Maze",
+        "path": "solutions/day22",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+    },
     "ordering": [
         "Ruby",
         "Rust",
