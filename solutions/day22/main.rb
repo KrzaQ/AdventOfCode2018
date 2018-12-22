@@ -72,20 +72,16 @@ def part2
     end
 
     get_neighbours = lambda do |x, y, mode|
-        (-1..1).map do |dx|
-            (-1..1).map do |dy|
-                [x+dx, y+dy, mode]
-            end
-        end.flatten(1).reject do |nx, ny, nmode|
-            [nx, ny] == [x, y]
-        end.yield_self do |arr|
-            [:torch, :gear, :neither].each do |nmode|
-                arr << [x, y, nmode]
-            end
-            arr
-        end.reject do |nx, ny, nmode|
-            x != nx and y != ny
-        end.reject do |nx, ny, nmode|
+        other_modes = [:torch, :gear, :neither].reject{ |m| m == mode }
+
+        [
+            [x - 1, y, mode],
+            [x + 1, y, mode],
+            [x, y - 1, mode],
+            [x, y + 1, mode],
+            [x, y, other_modes.first],
+            [x, y, other_modes.last],
+        ].reject do |nx, ny, nmode|
             nx - 25 > TARGET.first
         end.reject do |nx, ny, nmode|
             ny - 40 > TARGET.last
