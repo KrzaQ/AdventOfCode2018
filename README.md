@@ -25,7 +25,7 @@ I'm using various languages to provide solutions.
 | 18 | [Settlers of The North Pole][day18] | [:heavy_check_mark:](solutions/day18/main.rb) |  |  |  |
 | 19 | [Go With The Flow][day19] | [:heavy_check_mark:](solutions/day19/main.rb) |  |  |  |
 | 21 | [Chronal Conversion][day21] | [:heavy_check_mark:](solutions/day21/main.rb) |  |  | [:heavy_check_mark:](solutions/day21/machine.cpp) |
-| 22 | [Mode Maze][day22] | [:heavy_check_mark:](solutions/day22/main.rb) |  |  |  |
+| 22 | [Mode Maze][day22] | [:heavy_check_mark:](solutions/day22/main.rb) |  | [:heavy_check_mark:](solutions/day22/main.d) |  |
 
 [day01]: https://adventofcode.com/2018/day/1
 [day02]: https://adventofcode.com/2018/day/2
@@ -51,4 +51,4 @@ I'm using various languages to provide solutions.
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2018-12-22 08:25:27 +0100
+Readme generated on 2018-12-22 12:38:34 +0100

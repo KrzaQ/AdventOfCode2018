@@ -255,6 +255,10 @@
             {
                 "language": "Ruby",
                 "path": "main.rb"
+            },
+            {
+                "language": "D",
+                "path": "main.d"
             }
         ]
     },
