@@ -27,6 +27,7 @@ I'm using various languages to provide solutions.
 | 21 | [Chronal Conversion][day21] | [:heavy_check_mark:](solutions/day21/main.rb) |  |  | [:heavy_check_mark:](solutions/day21/machine.cpp) |
 | 22 | [Mode Maze][day22] | [:heavy_check_mark:](solutions/day22/main.rb) |  | [:heavy_check_mark:](solutions/day22/main.d) |  |
 | 24 | [Immune System Simulator 20XX][day24] | [:heavy_check_mark:](solutions/day24/main.rb) |  |  |  |
+| 25 | [Four-Dimensional Adventure][day25] | [:heavy_check_mark:](solutions/day25/main.rb) |  |  |  |
 
 [day01]: https://adventofcode.com/2018/day/1
 [day02]: https://adventofcode.com/2018/day/2
@@ -50,7 +51,8 @@ I'm using various languages to provide solutions.
 [day21]: https://adventofcode.com/2018/day/21
 [day22]: https://adventofcode.com/2018/day/22
 [day24]: https://adventofcode.com/2018/day/24
+[day25]: https://adventofcode.com/2018/day/25
 
 [kq]: https://dev.krzaq.cc
 
-Readme generated on 2018-12-24 07:55:36 +0100
+Readme generated on 2018-12-25 06:29:11 +0100

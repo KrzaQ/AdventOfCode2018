@@ -272,6 +272,16 @@
             }
         ]
     },
+    "day25": {
+        "desc": "Four-Dimensional Adventure",
+        "path": "solutions/day25",
+        "solutions": [
+            {
+                "language": "Ruby",
+                "path": "main.rb"
+            }
+        ]
+    },
     "ordering": [
         "Ruby",
         "Rust",
