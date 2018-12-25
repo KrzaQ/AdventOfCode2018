@@ -12,26 +12,22 @@ end
 
 def get_constellations arr
     cs = []
-    current = []
     while arr.size > 0
-        # p [arr.size, current.size]
-        if current.size == 0
-            current << arr.shift
+        elem = arr.shift
+        cons = cs
+            .each_with_index
+            .select{ |cons, _| cons.any? { |c| distance(c, elem) <= 3 } }
+        if cons.size
+            cs << cons.map(&:first).inject([elem], :+)
+            cons.reverse.each{ |_, i| cs.delete_at i }
         else
-            idx = arr.index{ |el| current.rindex { |c| distance(el, c) <= 3 } }
-            if idx
-                current << arr.delete_at(idx)
-            else
-                cs << current
-                current = []
-            end
+            cs << [elem]
         end
     end
-    cs << current if current.size > 0
     cs
 end
 
-cs = get_constellations DATA.sort_by{ |el| distance el, [0,0,0,0] }
+cs = get_constellations DATA
 
 PART1 =  cs.size
 
